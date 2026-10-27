@@ -17,7 +17,7 @@ import net.minecraft.util.math.BlockPos;
 public final class CityLife {
     private enum Phase { MOVE, WAIT, INSIDE }
 
-    private record Stop(int x, int z, int wait, int ix, int iz, boolean enter) {}
+    private record Stop(int x, int z, int delay, int ix, int iz, boolean enter) {}
 
     private static Stop walk(int x, int z, int wait) { return new Stop(x, z, wait, 0, 0, false); }
     private static Stop enter(int x, int z, int ix, int iz, int wait) { return new Stop(x, z, wait, ix, iz, true); }
@@ -97,7 +97,7 @@ public final class CityLife {
                         } else {
                             k.phase = Phase.WAIT;
                         }
-                        k.timer = s.wait();
+                        k.timer = s.delay();
                     } else {
                         double st = Math.min(SPEED, dist);
                         float yaw = (float) Math.toDegrees(Math.atan2(dz, dx)) - 90f;
