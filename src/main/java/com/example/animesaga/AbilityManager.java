@@ -99,7 +99,7 @@ public final class AbilityManager {
         for (int i = 0; i < n; i++) {
             VillagerEntity v = list.get(i);
             String name = v.getCustomName() == null ? "?" : v.getCustomName().getString();
-            String t = Town.thought(name, stage, w.random);
+            String t = Town.thought(name, stage, new java.util.Random(w.random.nextLong()));
             p.sendMessage(Text.literal("  💭 " + name + ": ").formatted(Formatting.LIGHT_PURPLE, Formatting.BOLD)
                     .append(Text.literal("«" + t + "»").formatted(Formatting.GRAY, Formatting.ITALIC)));
             v.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 80, 0, false, false));
