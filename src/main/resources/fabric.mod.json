@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "animesaga",
+  "version": "${version}",
+  "name": "Anime Saga",
+  "description": "Story mod: 3 anime storylines, NPC dialogues, choices, hero ability.",
+  "authors": ["You"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": { "main": ["com.example.animesaga.AnimeSaga"] },
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
